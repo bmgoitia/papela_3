@@ -24,6 +24,110 @@ $( "#sliderThumb img" ).on( "click", function(e) {
 } );
 
 
+/* FULL SIZE TO DOUBLE ELEMENT */
+
+const lv_dobletIcon = 
+`<svg class="lv_dobleteIcon" width="20" height="23" xmlns="http://www.w3.org/2000/svg" >
+    <rect width="20" height="10" x="1" y="1" rx="2" ry="2" fill="#FC2222" />
+    <rect width="20" height="10" x="1" y="13" rx="2" ry="2" fill="#FC2222" />
+  </svg>`;
+
+const lv_noDobletIcon= `
+<svg class="lv_dobleteIcon" width="20" height="23" xmlns="http://www.w3.org/2000/svg" >
+    <rect width="20" height="10" x="1" y="1" rx="2" ry="2" fill="#FC2222" />
+    <rect width="20" height="10" x="1" y="10" rx="2" ry="2" fill="#FC2222" />
+  </svg>
+`;
+
+$('.lv_portIcon').empty().append(lv_dobletIcon);
+
+
+
+let lv_homePosition; // lvHead o bnHead
+
+
+
+
+let lv_originalCont;
+
+
+
+/* FULL SIZE - DOBLET */
+
+$( ".lv_portIcon" ).on( "click", function(e) {
+
+
+  let lv_doublContent = $(this).siblings('.lv_dobletWrapper');
+
+  let parentArticle = lv_doublContent.closest('article');
+  let grandParentContainer = parentArticle.closest('.container');
+
+
+   if(grandParentContainer.hasClass('AP')){
+    lv_homePosition = "lvHead";  // lvHead o bnHead
+    
+   } else if(grandParentContainer.hasClass('BN')){
+    lv_homePosition = "bnHead";
+
+   } 
+
+
+
+   const lv_doublCont = 
+`<div class="lv_doubl">
+<div class="lv_doublItem lv_doublTop">
+  <img src="./img/blurry4.jpg" alt="" class="lv_doublImg">
+  <div class="lv_DoblText">
+    <span class="epiDobl"> Epígrafe </span>
+    <h5 class="${lv_homePosition} lv_dobletTitle" contentEditable="true">Titular doblete</h5>
+  </div>
+
+</div>
+
+<div class="lv_doublItem lv_doublBottom">
+  <img src="./img/blurry5.jpg" alt="" class="lv_doublImg">
+  <div class="lv_DoblText">
+    <span class="epiDobl"> Epígrafe </span>
+    <h5 class="${lv_homePosition} lv_dobletTitle" contentEditable="true">Titular doblete</h5>
+  </div>
+</div>
+</div>`;
+
+
+
+
+
+  
+  
+
+  if ($(parentArticle).hasClass('doblete')) {
+    $(this).empty().append(lv_dobletIcon);
+    lv_doublContent.empty().append(lv_originalCont);
+    parentArticle.removeClass("doblete");
+    
+
+  } else {
+    $(this).empty().append(lv_noDobletIcon);
+    lv_originalCont = lv_doublContent.html();
+    lv_doublContent.empty().append(lv_doublCont);
+    
+    parentArticle.addClass("doblete");
+  }
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 // IMG picker
 
