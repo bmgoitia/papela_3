@@ -76,7 +76,7 @@ $( ".lv_portIcon" ).on( "click", function(e) {
    const lv_doublCont = 
 `<div class="lv_doubl">
 <div class="lv_doublItem lv_doublTop">
-  <img src="./img/blurry4.jpg" alt="" class="lv_doublImg">
+  <img src="./img/camera_mini.png" alt="" class="lv_doublImg">
   <div class="lv_DoblText">
     <span class="epiDobl"> Epígrafe </span>
     <h5 class="${lv_homePosition} lv_dobletTitle" contentEditable="true">Titular doblete</h5>
@@ -85,7 +85,7 @@ $( ".lv_portIcon" ).on( "click", function(e) {
 </div>
 
 <div class="lv_doublItem lv_doublBottom">
-  <img src="./img/blurry5.jpg" alt="" class="lv_doublImg">
+  <img src="./img/camera_mini.png" alt="" class="lv_doublImg">
   <div class="lv_DoblText">
     <span class="epiDobl"> Epígrafe </span>
     <h5 class="${lv_homePosition} lv_dobletTitle" contentEditable="true">Titular doblete</h5>
